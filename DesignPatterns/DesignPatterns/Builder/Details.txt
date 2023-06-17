@@ -1,0 +1,9 @@
+﻿Builder pattern is creational pattern used when we need to split the object creation, 
+In my example we are creating a computer object but all the fields of computer class are
+not always applicable for example desktop has keyboard and mouse but laptop does not have since its in built 
+similarly laptop can have touch screen but desktop cannot have touchscreen
+if we create a computer class in a normal way we will have to provide null values in the constructor for the
+fields which are not applicable.
+
+
+In our case we only set the fields that are always required in constructor and other fields are set via separate methods like AddMouse, AddTouchScreen etc.
