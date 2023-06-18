@@ -14,7 +14,7 @@ namespace DesignPatterns.DesignPatterns.Builder
         public static void TestBuilderexample()
         {
 
-            Console.WriteLine("Builder Design pattern");
+            Console.WriteLine("------------Builder Design pattern-------------------");
 
             Console.WriteLine("Create a laptop");
             Computer Laptop = new ComputerBuilder(8, "1TB").AddTouchscreen("Samsung Touch").Build();
