@@ -7,13 +7,9 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.DesignPatterns.Factories.AbstractFactory
 {
-    internal abstract class RestaurantAbstractFactory
+    internal abstract class PizzaCompanyAbstractFactory
     {
-        public abstract IGarlicBread MakeNormalGarlicBread();
-        public abstract IGarlicBread MakeExtraCheeseGarlicBread();
-
         public abstract IPizza MakeChickenPizza();
-        public abstract IPizza MakeMuttonPizza();
         public abstract IPizza MakeMushroomPizza();
 
     }

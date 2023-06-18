@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.DesignPatterns.Factories.Common;
+using DesignPatterns.DesignPatterns.Factories.SimpleFactory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +8,12 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.DesignPatterns.Factories.Factory_Method
 {
-    internal abstract class PizzaFactoryMethod
+    internal class ChickenPizzaFactory : PizzaFactoryMethod
     {
-        public IPizza MakePizza()
+        protected override IPizza createPizza()
         {
-            IPizza pizza = createPizza();
-            pizza.makePizza();
+            IPizza pizza = new ChickenPizza();
             return pizza;
         }
-        protected abstract IPizza createPizza();
     }
 }

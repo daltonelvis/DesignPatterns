@@ -14,11 +14,10 @@ namespace DesignPatterns.DesignPatterns.Factories.SimpleFactory
         public static void TestSimpleFactory()
         {
 
-            Console.WriteLine("Simple Factory design pattern");
+            Console.WriteLine("------------Simple Factory design pattern----------------");
 
             IPizza pizza1 = PizzaFactory.MakePizza("Chicken");
-            IPizza pizza2 = PizzaFactory.MakePizza("Mutton");
-            IPizza pizza3 = PizzaFactory.MakePizza("Mushroom");
+            IPizza pizza2 = PizzaFactory.MakePizza("Mushroom");
 
         }
 
@@ -26,18 +25,12 @@ namespace DesignPatterns.DesignPatterns.Factories.SimpleFactory
         public static void TestFactoryMethod()
         {
 
-            Console.WriteLine("Factory Method pattern");
+            Console.WriteLine("-------------Factory Method pattern--------------------");
 
-            PizzaFactoryMethod DominosPizza = new DominosPizza();
-            IPizza pizza1 = DominosPizza.MakePizza("Chicken");
-            IPizza pizza2 = DominosPizza.MakePizza("Mutton");
-            IPizza pizza3 = DominosPizza.MakePizza("Mushroom");
-
-
-            PizzaFactoryMethod PizzahutPizza = new PizzaHutPizza();
-            IPizza pizza4 = PizzahutPizza.MakePizza("Chicken");
-            IPizza pizza5 = PizzahutPizza.MakePizza("Mutton");
-            IPizza pizza6 = PizzahutPizza.MakePizza("Mushroom");
+            PizzaFactoryMethod chicken = new ChickenPizzaFactory();
+            chicken.MakePizza();
+            PizzaFactoryMethod mushroom = new MushroomPizzaFactory();
+            mushroom.MakePizza();
 
 
         }
@@ -46,23 +39,15 @@ namespace DesignPatterns.DesignPatterns.Factories.SimpleFactory
         public static void TestAbstractFactory()
         {
 
-            Console.WriteLine("Abstract Factory pattern");
+            Console.WriteLine("-------------------Abstract Factory pattern--------------------");
 
-            RestaurantAbstractFactory Dominosrest = new DominosRestuarant();
-            IPizza  pizza1 = Dominosrest.MakeMuttonPizza();
-            IPizza pizza2 = Dominosrest.MakeMushroomPizza();
-            IPizza pizza3 = Dominosrest.MakeChickenPizza();
-            IGarlicBread gb1 = Dominosrest.MakeNormalGarlicBread();
-            IGarlicBread gb2 = Dominosrest.MakeExtraCheeseGarlicBread();
+            PizzaCompanyAbstractFactory Dominos = new DominosPizzaCompany();
+            Dominos.MakeMushroomPizza();
+            Dominos.MakeChickenPizza();
 
-
-
-            RestaurantAbstractFactory PizzaHutrest = new PizzaHutRestuarant();
-            IPizza pizza4 = PizzaHutrest.MakeMuttonPizza();
-            IPizza pizza5 = PizzaHutrest.MakeMushroomPizza();
-            IPizza pizza6 = PizzaHutrest.MakeChickenPizza();
-            IGarlicBread gb3 = PizzaHutrest.MakeNormalGarlicBread();
-            IGarlicBread gb4 = PizzaHutrest.MakeExtraCheeseGarlicBread();
+            PizzaCompanyAbstractFactory PizzaHut = new PizzaHutPizzaCompany();
+            PizzaHut.MakeMushroomPizza();
+            PizzaHut.MakeChickenPizza();
 
         }
 

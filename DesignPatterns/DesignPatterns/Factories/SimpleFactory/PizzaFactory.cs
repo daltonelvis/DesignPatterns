@@ -21,10 +21,6 @@ namespace DesignPatterns.DesignPatterns.Factories.SimpleFactory
                     IPizza pmush = new MushroomPizza();
                     pmush.makePizza();
                     return pmush;
-                case "Mutton":
-                    IPizza pmutton = new MuttonPizza();
-                    pmutton.makePizza();
-                    return pmutton;
                 default:
                     return null;
             }

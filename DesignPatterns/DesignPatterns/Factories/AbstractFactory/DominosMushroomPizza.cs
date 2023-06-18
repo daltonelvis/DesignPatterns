@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.DesignPatterns.Factories.SimpleFactory
 {
-    internal class DominosMuttonPizza : IPizza
+    internal class DominosMushroomPizza:IPizza
     {
         public void makePizza()
         {
-            Console.WriteLine("Dominos Mutton Pizza Ready");
+            Console.WriteLine("Dominos Mushroom Pizza Ready");
         }
     }
 }
