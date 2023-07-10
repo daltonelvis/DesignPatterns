@@ -49,8 +49,8 @@ to resolve this we use factory method design pattern.
 
 We create a abstract class with a method which the client would call to get the required object.
 
-The method that client calls would then call an abstract method to create an object, This method implementation 
-will be provided by the sun class.
+The method that client calls "MakePizzaObject()" would then call an abstract method "createPizza()" to create an object, This method implementation 
+will be provided by the sub class.
 
  public IPizza MakePizzaObject()
         {
@@ -61,6 +61,19 @@ will be provided by the sun class.
   protected abstract IPizza createPizza();
 
 So we will have seperate sub classes for each Pizza type which inherit the main abstract class.
+
+    internal class ChickenPizzaFactory : PizzaFactoryMethod
+    {
+        protected override IPizza createPizza()
+        {
+            IPizza pizza = new ChickenPizza();
+            return pizza;
+        }
+    }
+
+Client would then get the required pizza object in this way,
+
+
 
 
 
