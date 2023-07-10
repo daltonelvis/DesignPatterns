@@ -83,6 +83,10 @@ Client would then get the required pizza object in this way
 Here we do not need any switch statement to specify which object to create, Object creation is 
 taken care by the child/sub class.
 
+Abstract Factory:
+
+
+
 
 
 
