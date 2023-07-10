@@ -61,6 +61,7 @@ will be provided by the sub class.
   protected abstract IPizza createPizza();
 
 So we will have seperate sub classes for each Pizza type which inherit the main abstract class.
+The sub class will have an implementation for the abstract method to create the correct object.
 
     internal class ChickenPizzaFactory : PizzaFactoryMethod
     {
@@ -71,7 +72,18 @@ So we will have seperate sub classes for each Pizza type which inherit the main 
         }
     }
 
-Client would then get the required pizza object in this way,
+Client would then get the required pizza object in this way
+
+ PizzaFactoryMethod chicken = new ChickenPizzaFactory();
+ chicken.MakePizza();
+
+ PizzaFactoryMethod mushroom = new MushroomPizzaFactory();
+ mushroom.MakePizza();
+
+Here we do not need any switch statement to specify which object to create, Object creation is 
+taken care by the child/sub class.
+
+
 
 
 
