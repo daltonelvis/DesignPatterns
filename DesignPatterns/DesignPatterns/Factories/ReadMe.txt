@@ -17,21 +17,40 @@ CustomerOrder(string PizzaType)
     created object of mushroom pizza
 }
 
-if there are 2 separate classes one is related to Pizza creation and second is calculating price we have to repeat the logic of object creation in both the places and get the correct object to calculate the price and makepizza
+if there are 2 separate classes one is related to Pizza creation and second is calculating price 
+we have to repeat the logic of object creation in both the places and get the correct object to 
+calculate the price and makepizza.
 
 Suppose something changes in the logic for example a new pizza type is added or we have to change chicken to CHICKEN then we have to change it in 
 both the places.
 
-To Avoid this we can move the object creation logic to a common method and this would be a simple factory
+To avoid this we can move the object creation logic to a common method and this would be a simple factory
 
-the client code will then change to something like this, Any change needed we would just change the common method
-
+The client code will then change to something like this, Any change needed we would just change the factory
 CustomerOrder(string PizzaType)
 {
- PizzaFactory.MakePizza(PizzaType);
+   PizzaObject = PizzaFactory.MakePizza(PizzaType);
 }
 
-here MakePizza will have the if logic to check the pizza type and return the correct Pizza object
+Here MakePizza will have the "if" logic to check the pizza type and return the correct Pizza object.
+
+
+Factory Method:
+
+In the above approach there is a drawback we still are hardcoding Pizza type check in the common method.
+
+  If(PizzaType == "Chicken")
+    create object of chicken pizza
+  if(PizzaType == "Mushroom")
+    create object of mushroom pizza
+
+In case new Pizza types are created we still have to modify this common menthod which will break the open close principle.
+to resolve this we use factory method design pattern.
+
+
+
+
+
 
 
 
