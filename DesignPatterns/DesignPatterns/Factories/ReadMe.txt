@@ -47,6 +47,24 @@ In the above approach there is a drawback we still are hardcoding Pizza type che
 In case new Pizza types are created we still have to modify this common menthod which will break the open close principle.
 to resolve this we use factory method design pattern.
 
+We create a abstract class with a method which the client would call to get the required object.
+
+The method that client calls would then call an abstract method to create an object, This method implementation 
+will be provided by the sun class.
+
+ public IPizza MakePizzaObject()
+        {
+            IPizza pizza = createPizza();
+            pizza.makePizza();
+            return pizza;
+        }
+  protected abstract IPizza createPizza();
+
+So we will have seperate sub classes for each Pizza type which inherit the main abstract class.
+
+
+
+
 
 
 
